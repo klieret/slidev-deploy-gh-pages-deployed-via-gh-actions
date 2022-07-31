@@ -1,11 +1,3 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# Deploy slidev presentation to GH pages with custom GH action worflow
 
-To start the slide show:
-
-- `npm install`
-- `npm run dev`
-- visit http://localhost:3030
-
-Edit the [slides.md](./slides.md) to see the changes.
-
-Learn more about Slidev on [documentations](https://sli.dev/).
+See [the announcement](https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/) from github.
