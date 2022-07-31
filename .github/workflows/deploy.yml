@@ -61,7 +61,7 @@ jobs:
 
       - name: Move to deploy directory
         run: |
-          mv dist/ deploy/
+          mv artifacts/dist/ deploy/
       - name: List documents
         run: ls -R
         working-directory: deploy
