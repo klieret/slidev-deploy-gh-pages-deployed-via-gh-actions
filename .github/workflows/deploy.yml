@@ -56,14 +56,14 @@ jobs:
           path: artifacts/
 
       - name: List artifacts
-        run: ls -R
+        run: ls -l -R
         working-directory: artifacts
 
       - name: Move to deploy directory
         run: |
-          mv artifacts/dist/ deploy/
+          cp -r --dereference --no-preserve=mode,ownership artifacts/dist deploy/
       - name: List documents
-        run: ls -R
+        run: ls -l -R
         working-directory: deploy
 
       - name: Upload artifact
