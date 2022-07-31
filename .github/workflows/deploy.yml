@@ -31,6 +31,14 @@ jobs:
       - name: Build
         run: npm run build -- --base '/collaborative-programming-github/'
 
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: dist
+
+
+
   prepare_website:
     runs-on: ubuntu-latest
     needs: build
@@ -65,11 +73,11 @@ jobs:
 
   deploy:
     if: github.ref == 'refs/heads/main'
+    needs: prepare_website
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: prepare_website
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
